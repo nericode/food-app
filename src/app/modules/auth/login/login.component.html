@@ -1,3 +1,44 @@
-<StackLayout class="background">
-    <Label text="Login component"></Label>
-</StackLayout>
+<GridLayout>
+    <GridLayout class="background"></GridLayout>
+    <DockLayout style="padding: 25">
+        <StackLayout dock="top">
+            <Label class="title" text="Sign In"></Label>
+            <StackLayout marginTop="1%" class="white-box">
+                <Image style="margin-top: -180;" src="res://salad"></Image>
+                <Label text="Welcome Back" class="title-login big"></Label>
+                <Label
+                    text="We Love to see you agian"
+                    class="title-login small"
+                ></Label>
+                <TextField
+                    class="tf-gray user"
+                    style="margin-left: 10; margin-right: 10;"
+                    hint="Username Or Email Address"
+                    keyboardType="email"
+                    autocapitalizationType="none"
+                >
+                </TextField>
+                <TextField
+                    class="tf-gray password"
+                    style="margin-left: 10; margin-right: 10;"
+                    hint="Password"
+                    secure="true"
+                >
+                </TextField>
+                <Button
+                    style="margin-bottom: 15; margin-top: 2;"
+                    class="button button-one arrow"
+                ></Button>
+            </StackLayout>
+        </StackLayout>
+        <GridLayout dock="bottom" columns="*, *">
+            <Button class="button button-one" col="0" text="Sign In"></Button>
+            <Button
+                class="button button-three"
+                backgroundColor="white"
+                text="Sign Up"
+                col="1"
+            ></Button>
+        </GridLayout>
+    </DockLayout>
+</GridLayout>

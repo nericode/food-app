@@ -1,0 +1,19 @@
+.background {
+    background-image: url("res://background_login");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.title-login {
+    color: $color_violet;
+    text-align: center;
+    &.big {
+        font-size: 40;
+        font-weight: bold;
+    }
+    &.small {
+        font-weight: 300;
+        font-size: 14;
+    }
+}
