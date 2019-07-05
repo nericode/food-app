@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { Routes } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { RegisterComponent } from "./register/register.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -12,6 +13,10 @@ const routes: Routes = [
     {
         path: "",
         component: LoginComponent
+    },
+    {
+        path: "register",
+        component: RegisterComponent
     }
 ];
 
@@ -20,7 +25,7 @@ const routes: Routes = [
         NativeScriptRouterModule,
         NativeScriptRouterModule.forChild(routes)
     ],
-    declarations: [LoginComponent],
+    declarations: [LoginComponent, RegisterComponent],
     schemas: [NO_ERRORS_SCHEMA]
 })
 /*

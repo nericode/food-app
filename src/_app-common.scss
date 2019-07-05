@@ -16,17 +16,29 @@
     border-radius: 5;
     opacity: 0.5;
     padding-left: 25;
-    placeholder-color: $color_violet;
+
     background-color: $color_gray_light;
+    background-repeat: no-repeat;
+    background-position: 1% 50%;
     &.user {
         background-image: url("res://ic_user");
-        background-repeat: no-repeat;
-        background-position: 1% 50%;
+        placeholder-color: $color_violet;
+    }
+    &.user-green {
+        background-image: url("res://ic_user_green");
+        placeholder-color: $color_green;
+    }
+    &.email-green {
+        background-image: url("res://ic_mail_green");
+        placeholder-color: $color_green;
     }
     &.password {
         background-image: url("res://ic_password");
-        background-repeat: no-repeat;
-        background-position: 1% 50%;
+        placeholder-color: $color_violet;
+    }
+    &.password-green {
+        background-image: url("res://ic_password_green");
+        placeholder-color: $color_green;
     }
 }
 
@@ -47,6 +59,26 @@
     }
     &.arrow {
         background-image: url("res://arrow");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+}
+
+.button-outline {
+    border-width: 1;
+    border-radius: 5;
+    background-color: white;
+    width: 50;
+    height: 50;
+    &.google {
+        border-color: $color_pink;
+        background-image: url("res://ic_google");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+    &.facebook {
+        border-color: $color_blue;
+        background-image: url("res://ic_facebook");
         background-repeat: no-repeat;
         background-position: 50% 50%;
     }
