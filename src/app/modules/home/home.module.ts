@@ -3,6 +3,7 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { BottomBarComponent } from "./bottom-bar/bottom-bar.component";
 import { RestaurantsComponent } from "./restaurants/restarutants.component";
+import { CommonModule } from "@angular/common";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -18,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
+        CommonModule,
         NativeScriptRouterModule,
         NativeScriptRouterModule.forChild(routes)
     ],
