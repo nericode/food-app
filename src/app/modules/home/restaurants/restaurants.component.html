@@ -4,6 +4,42 @@
             row="0"
             style="background-image: url('res://bg_restaurants'); background-repeat: no-repeat; background-position: center;"
         >
+            <Label style="padding: 25" class="title" text="Home"></Label>
         </StackLayout>
+        <RadListView row="1" [items]="data">
+            <ng-template let-item="item">
+                <CardView
+                    margin="10"
+                    backgroundColor="white"
+                    elevation="20"
+                    radius="5"
+                >
+                    <StackLayout>
+                        <Image
+                            height="100"
+                            stretch="fill"
+                            [src]="item.restaurant.thumb"
+                        ></Image>
+                        <StackLayout padding="5">
+                            <Label
+                                textWrap="true"
+                                [text]="item.restaurant.name"
+                            ></Label>
+                            <Label
+                                style="color: gray; font-size: 9;"
+                                textWrap="true"
+                                [text]="item.restaurant.location.address"
+                            ></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </CardView>
+            </ng-template>
+            <ListViewStaggeredLayout
+                tkListViewLayout
+                scrollDirection="Vertical"
+                spanCount="2"
+            >
+            </ListViewStaggeredLayout>
+        </RadListView>
     </GridLayout>
 </BottomBar>

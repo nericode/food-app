@@ -2,7 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { BottomBarComponent } from "./bottom-bar/bottom-bar.component";
-import { RestaurantsComponent } from "./restaurants/restarutants.component";
+import { RestaurantsComponent } from "./restaurants/restaurants.component";
 import { CommonModule } from "@angular/common";
 import { registerElement } from "nativescript-angular/element-registry";
 import { CardView } from "nativescript-cardview";
