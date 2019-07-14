@@ -7,8 +7,10 @@ import { CommonModule } from "@angular/common";
 import { registerElement } from "nativescript-angular/element-registry";
 import { CardView } from "nativescript-cardview";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular/listview-directives";
+import { RestaurantDetailComponent } from "./restaurant-detail/restaurant-detail.component";
 
 registerElement("CardView", () => CardView);
+registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
@@ -18,6 +20,10 @@ const routes: Routes = [
     {
         path: "restaurants",
         component: RestaurantsComponent
+    },
+    {
+        path: "restaurant-detail",
+        component: RestaurantDetailComponent
     }
 ];
 
@@ -28,7 +34,11 @@ const routes: Routes = [
         NativeScriptRouterModule,
         NativeScriptRouterModule.forChild(routes)
     ],
-    declarations: [BottomBarComponent, RestaurantsComponent],
+    declarations: [
+        BottomBarComponent,
+        RestaurantsComponent,
+        RestaurantDetailComponent
+    ],
     schemas: [NO_ERRORS_SCHEMA]
 })
 /*

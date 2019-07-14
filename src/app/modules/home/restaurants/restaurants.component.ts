@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ObservableArray } from "tns-core-modules/data/observable-array/observable-array";
 import { RestaurantService } from "./services/restaurant.service";
 import { TextField } from "tns-core-modules/ui/text-field";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     moduleId: module.id,
@@ -11,7 +12,10 @@ import { TextField } from "tns-core-modules/ui/text-field";
 export class RestaurantsComponent {
     public data: ObservableArray<any>;
 
-    constructor(private restaurantService: RestaurantService) {
+    constructor(
+        private restaurantService: RestaurantService,
+        private navigate: RouterExtensions
+    ) {
         this.getRestaurants();
     }
 
@@ -28,5 +32,13 @@ export class RestaurantsComponent {
     public onReturnPress(args) {
         let textField = <TextField>args.object;
         this.getRestaurants(textField.text);
+    }
+
+    public onNavigate(item) {
+        this.navigate.navigate(["/home/restaurant-detail"], {
+            queryParams: {
+                restaurant: JSON.stringify(item)
+            }
+        });
     }
 }

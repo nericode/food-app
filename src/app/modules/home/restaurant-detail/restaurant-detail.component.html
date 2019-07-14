@@ -1,0 +1,52 @@
+<StackLayout>
+    <StackLayout
+        height="200"
+        [backgroundImage]="restaurant.thumb"
+        style="background-position: center; background-size: cover; background-repeat: no-repeat;"
+    >
+        <StackLayout height="100%" style="background-color: rgba(0, 0, 0, 0.5)">
+            <Label
+                padding="10"
+                class="title"
+                [text]="restaurant.name"
+                textWrap="true"
+            ></Label>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout padding="5">
+        <Label
+            textWrap="true"
+            [text]="restaurant.user_rating.rating_tool_tip"
+        ></Label>
+        <Label
+            style="color: gray; font-size: 12;"
+            textWrap="true"
+            [text]="restaurant.timings"
+        ></Label>
+        <Label
+            style="color: gray; font-size: 12;"
+            textWrap="true"
+            [text]="restaurant.cuisines"
+        ></Label>
+        <Label
+            style=" font-size:12;"
+            textWrap="true"
+            [text]="restaurant.location.address"
+        ></Label>
+        <Label
+            style=" font-size: 12;"
+            textWrap="true"
+            [text]="restaurant.phone_numbers"
+        ></Label>
+    </StackLayout>
+    <ContentView height="100%" width="100%">
+        <Mapbox
+            accessToken="pk.eyJ1IjoibmVyaWNvZGUiLCJhIjoiY2pmbHNtNGYwMGt0YzJ4cW9ub3c5aDduZyJ9.LsugmVXeZwj5QJAGcApXTw"
+            [latitude]="restaurant.location.latitude"
+            [longitude]="restaurant.location.longitude"
+            zoomLevel="12"
+            (mapReady)="onMapReady($event, restaurant)"
+        >
+        </Mapbox>
+    </ContentView>
+</StackLayout>
