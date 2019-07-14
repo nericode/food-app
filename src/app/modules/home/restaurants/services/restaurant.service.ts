@@ -5,9 +5,10 @@ import { Injectable } from "@angular/core";
 export class RestaurantService {
     constructor(private http: HttpClient) {}
 
-    public search() {
+    public search(query: string = "") {
         return this.http.get(
-            "https://developers.zomato.com/api/v2.1/search?count=10",
+            "https://developers.zomato.com/api/v2.1/search?count=10&q=" +
+                query.replace(/ /g, "%20"),
             {
                 headers: this.commonHeaders()
             }

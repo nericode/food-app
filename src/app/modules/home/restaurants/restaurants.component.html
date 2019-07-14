@@ -1,10 +1,38 @@
 <BottomBar index="0">
-    <GridLayout rows="250, *">
+    <GridLayout rows="150, *">
         <StackLayout
             row="0"
+            padding="10"
             style="background-image: url('res://bg_restaurants'); background-repeat: no-repeat; background-position: center;"
         >
-            <Label style="padding: 25" class="title" text="Home"></Label>
+            <Label class="title" text="Home"></Label>
+            <Label class="title" text="Search restaurant" fontSize="15"></Label>
+            <StackLayout padding="10" marginTop="5" class="white-box">
+                <GridLayout columns="25, *, 25">
+                    <Image
+                        col="0"
+                        horizontalAlignment="center"
+                        verticalAlignment="center"
+                        stretch="none"
+                        src="res://ic_search_violet"
+                    ></Image>
+                    <TextField
+                        col="1"
+                        marginLeft="10"
+                        hint="Search restaurant"
+                        returnKeyType="done"
+                        (returnPress)="onReturnPress($event)"
+                        color="#78849E"
+                    ></TextField>
+                    <Image
+                        horizontalAlignment="center"
+                        verticalAlignment="center"
+                        col="2"
+                        stretch="none"
+                        src="res://ic_filter"
+                    ></Image>
+                </GridLayout>
+            </StackLayout>
         </StackLayout>
         <RadListView row="1" [items]="data">
             <ng-template let-item="item">
