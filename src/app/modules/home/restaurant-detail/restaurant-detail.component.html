@@ -7,6 +7,13 @@
         <StackLayout height="100%" style="background-color: rgba(0, 0, 0, 0.5)">
             <Label
                 padding="10"
+                class="fa"
+                text="&#xf104;"
+                (tap)="onBack()"
+                style="color: white; font-size: 36;"
+            ></Label>
+            <Label
+                padding="10"
                 class="title"
                 [text]="restaurant.name"
                 textWrap="true"

@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { MapboxViewApi } from "nativescript-mapbox";
+import { Page } from "tns-core-modules/ui/page/page";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     moduleId: module.id,
@@ -10,7 +12,12 @@ export class RestaurantDetailComponent {
     public restaurant: any;
     private map: MapboxViewApi;
 
-    constructor(private params: ActivatedRoute) {
+    constructor(
+        private params: ActivatedRoute,
+        private page: Page,
+        private navigate: RouterExtensions
+    ) {
+        this.page.actionBarHidden = true;
         this.restaurant = JSON.parse(
             this.params.snapshot.queryParams["restaurant"]
         )["restaurant"];
@@ -26,5 +33,9 @@ export class RestaurantDetailComponent {
                 subtitle: restaurant.timings
             }
         ]);
+    }
+
+    public onBack() {
+        this.navigate.back();
     }
 }
