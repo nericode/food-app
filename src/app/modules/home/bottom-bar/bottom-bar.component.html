@@ -2,7 +2,11 @@
     <ng-content row="0"></ng-content>
     <!-- Tabs -->
     <FlexboxLayout row="1" class="bottom-bar-line">
-        <StackLayout width="25%" verticalAlignment="center">
+        <StackLayout
+            (tap)="onNavigate('/home/restaurants')"
+            width="25%"
+            verticalAlignment="center"
+        >
             <Image
                 *ngIf="index != 0"
                 horizontalAlignment="center"
@@ -77,7 +81,11 @@
                 ></Image>
             </StackLayout>
         </StackLayout>
-        <StackLayout width="25%" verticalAlignment="center">
+        <StackLayout
+            (tap)="onNavigate('/home/profile')"
+            width="25%"
+            verticalAlignment="center"
+        >
             <Image
                 *ngIf="index != 3"
                 horizontalAlignment="center"

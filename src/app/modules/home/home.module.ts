@@ -8,6 +8,7 @@ import { registerElement } from "nativescript-angular/element-registry";
 import { CardView } from "nativescript-cardview";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular/listview-directives";
 import { RestaurantDetailComponent } from "./restaurant-detail/restaurant-detail.component";
+import { ProfileComponent } from "./profile/profile.component";
 
 registerElement("CardView", () => CardView);
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
@@ -24,6 +25,10 @@ const routes: Routes = [
     {
         path: "restaurant-detail",
         component: RestaurantDetailComponent
+    },
+    {
+        path: "profile",
+        component: ProfileComponent
     }
 ];
 
@@ -37,7 +42,8 @@ const routes: Routes = [
     declarations: [
         BottomBarComponent,
         RestaurantsComponent,
-        RestaurantDetailComponent
+        RestaurantDetailComponent,
+        ProfileComponent
     ],
     schemas: [NO_ERRORS_SCHEMA]
 })

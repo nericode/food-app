@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     moduleId: module.id,
@@ -7,4 +8,13 @@ import { Component, Input } from "@angular/core";
 })
 export class BottomBarComponent {
     @Input("index") public index: number;
+
+    constructor(private router: RouterExtensions) {}
+
+    public onNavigate(url: string) {
+        this.router.navigate([url], {
+            animated: false,
+            clearHistory: true
+        });
+    }
 }
