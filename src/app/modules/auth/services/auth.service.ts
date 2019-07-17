@@ -5,6 +5,19 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class AuthService {
     constructor(private http: HttpClient) {}
 
+    public login(email: string, password: string) {
+        return this.http.post(
+            "https://reqres.in/api/login",
+            JSON.stringify({
+                email: email,
+                password: password
+            }),
+            {
+                headers: this.commonHeaders()
+            }
+        );
+    }
+
     public register(email: string, password: string) {
         return this.http.post(
             "https://reqres.in/api/register",
