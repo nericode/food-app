@@ -39,6 +39,7 @@
                 >
                 </TextField>
                 <TextField
+                    [(ngModel)]="email"
                     class="tf-gray email-green"
                     style="margin-left: 10; margin-right: 10;"
                     hint="Username Or Email Address"
@@ -47,6 +48,7 @@
                 >
                 </TextField>
                 <TextField
+                    [(ngModel)]="password"
                     class="tf-gray password-green"
                     style="margin-left: 10; margin-right: 10;"
                     hint="Password"
@@ -54,6 +56,7 @@
                 >
                 </TextField>
                 <Button
+                    (tap)="onRegister()"
                     style="margin-bottom: 15; margin-top: 2;"
                     class="button button-second arrow"
                 ></Button>
