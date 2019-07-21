@@ -5,7 +5,6 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     moduleId: module.id,
-    providers: [AuthService],
     templateUrl: "./register.component.html"
 })
 export class RegisterComponent {

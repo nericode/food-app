@@ -5,7 +5,6 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     moduleId: module.id,
-    providers: [AuthService],
     templateUrl: "./login.component.html"
 })
 export class LoginComponent {
@@ -22,8 +21,11 @@ export class LoginComponent {
 
     public onLogin() {
         this.auth.login(this.email, this.password).subscribe(
-            () => {
-                this.router.navigate(["/home/restaurants"]);
+            response => {
+                this.auth.setUser(response);
+                this.router.navigate(["/home/restaurants"], {
+                    clearHistory: true
+                });
             },
             error => console.log(error)
         );

@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import * as localstorage from "nativescript-localstorage";
 
 @Injectable()
 export class AuthService {
@@ -35,5 +36,17 @@ export class AuthService {
         return new HttpHeaders({
             "Content-Type": "application/json"
         });
+    }
+
+    public setUser(data: any) {
+        localstorage.setItem("user", JSON.stringify(data));
+    }
+
+    public currentUser() {
+        return JSON.parse(localstorage.getItem("user")) || null;
+    }
+
+    public deleteUser() {
+        localstorage.removeItem("user");
     }
 }

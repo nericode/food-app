@@ -3,17 +3,19 @@ import { Routes } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { RegisterComponent } from "./register/register.component";
-import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { AuthGuard } from "~/app/auth-guard.service";
+import { AuthService } from "./services/auth.service";
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 const routes: Routes = [
     {
         path: "",
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: "register",
@@ -28,6 +30,7 @@ const routes: Routes = [
         NativeScriptRouterModule.forChild(routes)
     ],
     declarations: [LoginComponent, RegisterComponent],
+    providers: [AuthGuard, AuthService],
     schemas: [NO_ERRORS_SCHEMA]
 })
 /*
