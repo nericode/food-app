@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Page } from "tns-core-modules/ui/page/page";
 import { AuthService } from "../services/auth.service";
 import { RouterExtensions } from "nativescript-angular/router";
+import * as firebase from "nativescript-plugin-firebase";
 
 @Component({
     moduleId: module.id,
@@ -28,5 +29,21 @@ export class RegisterComponent {
             },
             error => console.log(error)
         );
+    }
+
+    public onLoginFacebook() {
+        firebase
+            .login({
+                type: firebase.LoginType.FACEBOOK,
+                facebookOptions: {
+                    scopes: ["public_profile", "email"]
+                }
+            })
+            .then(
+                result => {
+                    console.dir(JSON.stringify(result));
+                },
+                error => console.log(error)
+            );
     }
 }

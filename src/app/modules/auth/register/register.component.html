@@ -24,7 +24,10 @@
                         style="margin-right: 15%"
                         class="button-outline google"
                     ></Button>
-                    <Button class="button-outline facebook"></Button>
+                    <Button
+                        (tap)="onLoginFacebook()"
+                        class="button-outline facebook"
+                    ></Button>
                 </FlexboxLayout>
                 <Label
                     style="color: #FF4F9A;"
