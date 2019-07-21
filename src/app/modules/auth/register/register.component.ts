@@ -41,7 +41,10 @@ export class RegisterComponent {
             })
             .then(
                 result => {
-                    console.dir(JSON.stringify(result));
+                    this.auth.setUser(JSON.stringify(result));
+                    this.router.navigate(["/home/restaurants"], {
+                        clearHistory: true
+                    });
                 },
                 error => console.log(error)
             );
