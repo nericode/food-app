@@ -3,6 +3,7 @@ import { ObservableArray } from "tns-core-modules/data/observable-array/observab
 import { RestaurantService } from "./services/restaurant.service";
 import { TextField } from "tns-core-modules/ui/text-field";
 import { RouterExtensions } from "nativescript-angular/router";
+import { Page } from "tns-core-modules/ui/page/page";
 
 @Component({
     moduleId: module.id,
@@ -13,9 +14,11 @@ export class RestaurantsComponent {
     public data: ObservableArray<any>;
 
     constructor(
+        private page: Page,
         private restaurantService: RestaurantService,
         private navigate: RouterExtensions
     ) {
+        this.page.actionBarHidden = true;
         this.getRestaurants();
     }
 

@@ -92,6 +92,11 @@
         border-color: $color_green;
         width: 80%;
     }
+    &.gray {
+        color: gray;
+        border-color: gray;
+        width: 80%;
+    }
 }
 
 .line {

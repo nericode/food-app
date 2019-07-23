@@ -24,7 +24,8 @@ export class LoginComponent {
             response => {
                 this.auth.setUser("food-app", response);
                 this.router.navigate(["/home/restaurants"], {
-                    clearHistory: true
+                    clearHistory: true,
+                    animated: false
                 });
             },
             error => console.log(error)

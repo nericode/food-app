@@ -1,5 +1,5 @@
 <BottomBar index="0">
-    <GridLayout rows="150, *">
+    <GridLayout ios:rows="150, *" android:rows="180, *">
         <StackLayout
             row="0"
             padding="10"
@@ -7,7 +7,12 @@
         >
             <Label class="title" text="Home"></Label>
             <Label class="title" text="Search restaurant" fontSize="15"></Label>
-            <StackLayout padding="10" marginTop="5" class="white-box">
+            <StackLayout
+                android:height="60"
+                padding="10"
+                marginTop="5"
+                class="white-box"
+            >
                 <GridLayout columns="25, *, 25">
                     <Image
                         col="0"
@@ -23,6 +28,7 @@
                         returnKeyType="done"
                         (returnPress)="onReturnPress($event)"
                         color="#78849E"
+                        backgroundColor="white"
                     ></TextField>
                     <Image
                         horizontalAlignment="center"
