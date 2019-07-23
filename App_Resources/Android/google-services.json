@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "870452944701-6ktsg76ii90tqs655fljvu9t6e4cch5p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.nativescript.foodapp",
+            "certificate_hash": "79b1278a7ec2739253438b178985bce8d4822a15"
+          }
+        },
+        {
           "client_id": "870452944701-3g1gjqmpfneagn97ee7kset1jqbhe5fo.apps.googleusercontent.com",
           "client_type": 3
         }

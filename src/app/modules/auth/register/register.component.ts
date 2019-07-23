@@ -22,7 +22,8 @@ export class RegisterComponent {
 
     public onRegister() {
         this.auth.register(this.email, this.password).subscribe(
-            () => {
+            response => {
+                this.auth.setUser("food-app", response);
                 this.router.navigate(["/home/restaurants"], {
                     clearHistory: true
                 });
@@ -41,12 +42,30 @@ export class RegisterComponent {
             })
             .then(
                 result => {
-                    this.auth.setUser(JSON.stringify(result));
+                    this.auth.setUser("facebook", JSON.stringify(result));
                     this.router.navigate(["/home/restaurants"], {
                         clearHistory: true
                     });
                 },
                 error => console.log(error)
+            );
+    }
+
+    public onLoginGoogle() {
+        firebase
+            .login({
+                type: firebase.LoginType.GOOGLE
+            })
+            .then(
+                result => {
+                    this.auth.setUser("google", JSON.stringify(result));
+                    this.router.navigate(["/home/restaurants"], {
+                        clearHistory: true
+                    });
+                },
+                errorMessage => {
+                    console.log(errorMessage);
+                }
             );
     }
 }

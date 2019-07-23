@@ -38,8 +38,14 @@ export class AuthService {
         });
     }
 
-    public setUser(data: any) {
-        localstorage.setItem("user", JSON.stringify(data));
+    public setUser(type: string, data: any) {
+        localstorage.setItem(
+            "user",
+            JSON.stringify({
+                type: type,
+                data: data
+            })
+        );
     }
 
     public currentUser() {

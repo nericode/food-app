@@ -22,7 +22,7 @@ export class LoginComponent {
     public onLogin() {
         this.auth.login(this.email, this.password).subscribe(
             response => {
-                this.auth.setUser(response);
+                this.auth.setUser("food-app", response);
                 this.router.navigate(["/home/restaurants"], {
                     clearHistory: true
                 });
