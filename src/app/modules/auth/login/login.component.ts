@@ -8,8 +8,8 @@ import { RouterExtensions } from "nativescript-angular/router";
     templateUrl: "./login.component.html"
 })
 export class LoginComponent {
-    public email: string = "";
-    public password: string = "";
+    public email: string = "eve.holt@reqres.in";
+    public password: string = "cityslicka";
 
     constructor(
         private page: Page,
@@ -23,7 +23,7 @@ export class LoginComponent {
         this.auth.login(this.email, this.password).subscribe(
             response => {
                 this.auth.setUser("food-app", response);
-                this.router.navigate(["/home/restaurants"], {
+                this.router.navigate(["/home/menu"], {
                     clearHistory: true,
                     animated: false
                 });

@@ -1,80 +1,78 @@
-<BottomBar index="0">
-    <GridLayout ios:rows="150, *" android:rows="180, *">
+<GridLayout ios:rows="150, *" android:rows="180, *">
+    <StackLayout
+        row="0"
+        padding="10"
+        style="background-image: url('res://bg_restaurants'); background-repeat: no-repeat; background-position: center;"
+    >
+        <Label class="title" text="Home"></Label>
+        <Label class="title" text="Search restaurant" fontSize="15"></Label>
         <StackLayout
-            row="0"
+            android:height="60"
             padding="10"
-            style="background-image: url('res://bg_restaurants'); background-repeat: no-repeat; background-position: center;"
+            marginTop="5"
+            class="white-box"
         >
-            <Label class="title" text="Home"></Label>
-            <Label class="title" text="Search restaurant" fontSize="15"></Label>
-            <StackLayout
-                android:height="60"
-                padding="10"
-                marginTop="5"
-                class="white-box"
-            >
-                <GridLayout columns="25, *, 25">
-                    <Image
-                        col="0"
-                        horizontalAlignment="center"
-                        verticalAlignment="center"
-                        stretch="none"
-                        src="res://ic_search_violet"
-                    ></Image>
-                    <TextField
-                        col="1"
-                        marginLeft="10"
-                        hint="Search restaurant"
-                        returnKeyType="done"
-                        (returnPress)="onReturnPress($event)"
-                        color="#78849E"
-                        backgroundColor="white"
-                    ></TextField>
-                    <Image
-                        horizontalAlignment="center"
-                        verticalAlignment="center"
-                        col="2"
-                        stretch="none"
-                        src="res://ic_filter"
-                    ></Image>
-                </GridLayout>
-            </StackLayout>
-        </StackLayout>
-        <RadListView row="1" [items]="data">
-            <ng-template let-item="item">
-                <CardView
-                    margin="10"
+            <GridLayout columns="25, *, 25">
+                <Image
+                    col="0"
+                    horizontalAlignment="center"
+                    verticalAlignment="center"
+                    stretch="none"
+                    src="res://ic_search_violet"
+                ></Image>
+                <TextField
+                    col="1"
+                    marginLeft="10"
+                    hint="Search restaurant"
+                    returnKeyType="done"
+                    (returnPress)="onReturnPress($event)"
+                    color="#78849E"
                     backgroundColor="white"
-                    elevation="20"
-                    radius="5"
-                    (tap)="onNavigate(item)"
-                >
-                    <StackLayout>
-                        <Image
-                            height="100"
-                            stretch="fill"
-                            [src]="item.restaurant.thumb"
-                        ></Image>
-                        <StackLayout padding="5">
-                            <Label
-                                textWrap="true"
-                                [text]="item.restaurant.name"
-                            ></Label>
-                            <Label
-                                style="color: gray; font-size: 9;"
-                                textWrap="true"
-                                [text]="item.restaurant.location.address"
-                            ></Label>
-                        </StackLayout>
-                    </StackLayout>
-                </CardView>
-            </ng-template>
-            <ListViewStaggeredLayout
-                tkListViewLayout
-                scrollDirection="Vertical"
-                spanCount="2"
+                ></TextField>
+                <Image
+                    horizontalAlignment="center"
+                    verticalAlignment="center"
+                    col="2"
+                    stretch="none"
+                    src="res://ic_filter"
+                ></Image>
+            </GridLayout>
+        </StackLayout>
+    </StackLayout>
+    <RadListView row="1" [items]="data">
+        <ng-template let-item="item">
+            <CardView
+                margin="10"
+                backgroundColor="white"
+                elevation="20"
+                radius="5"
+                (tap)="onNavigate(item)"
             >
-            </ListViewStaggeredLayout>
-        </RadListView>
-    </GridLayout>
-</BottomBar>
+                <StackLayout>
+                    <Image
+                        height="100"
+                        stretch="fill"
+                        [src]="item.restaurant.thumb"
+                    ></Image>
+                    <StackLayout padding="5">
+                        <Label
+                            textWrap="true"
+                            [text]="item.restaurant.name"
+                        ></Label>
+                        <Label
+                            style="color: gray; font-size: 9;"
+                            textWrap="true"
+                            [text]="item.restaurant.location.address"
+                        ></Label>
+                    </StackLayout>
+                </StackLayout>
+            </CardView>
+        </ng-template>
+        <ListViewStaggeredLayout
+            tkListViewLayout
+            scrollDirection="Vertical"
+            spanCount="2"
+        >
+        </ListViewStaggeredLayout>
+    </RadListView>
+</GridLayout>

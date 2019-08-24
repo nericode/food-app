@@ -1,0 +1,28 @@
+<BottomNavigation selectedIndex="0">
+    <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+    <TabStrip>
+        <TabStripItem title="Home" iconSource="res://ic_home"></TabStripItem>
+        <TabStripItem title="Others" iconSource="res://ic_wood"></TabStripItem>
+        <TabStripItem title="Alerts" iconSource="res://ic_bell"></TabStripItem>
+        <TabStripItem
+            title="User"
+            iconSource="res://ic_user_white"
+        ></TabStripItem>
+    </TabStrip>
+
+    <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+    <TabContentItem>
+        <GridLayout>
+            <ns-restaurants></ns-restaurants>
+        </GridLayout>
+    </TabContentItem>
+    <TabContentItem>
+        <GridLayout> </GridLayout>
+    </TabContentItem>
+    <TabContentItem>
+        <GridLayout> </GridLayout>
+    </TabContentItem>
+    <TabContentItem>
+        <GridLayout> </GridLayout>
+    </TabContentItem>
+</BottomNavigation>

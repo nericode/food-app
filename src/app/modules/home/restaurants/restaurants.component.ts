@@ -8,6 +8,7 @@ import { Page } from "tns-core-modules/ui/page/page";
 @Component({
     moduleId: module.id,
     providers: [RestaurantService],
+    selector: "ns-restaurants",
     templateUrl: "./restaurants.component.html"
 })
 export class RestaurantsComponent {
